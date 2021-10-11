@@ -20,7 +20,7 @@ class Field {
       this.print();
       this.askQuestion();
       if (!this.isInBounds()) {
-        console.log('Out of bounds instruction!');
+        console.log('Out of bounds');
         playing = false;
         break;
       } else if (this.isHole()) {
@@ -106,5 +106,5 @@ class Field {
   }
 }
 
-const myfield = new Field(Field.generateField(10, 10, 0.2));
+const myfield = new Field(Field.generateField(10, 10, 0.15));
 myfield.runGame();
