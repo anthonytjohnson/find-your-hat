@@ -72,4 +72,25 @@ class Field {
     field[hatLocation.y][hat.Location.x] = hat;
     return field;
   }
+  runGame() {
+    let playing = true;
+    while (playing) {
+      this.print();
+      this.askQuestion();
+      if (!this.isInBounds()) {
+        console.log('Out of bounds');
+        playing = false;
+        break;
+      } else if (this.isHole()) {
+        console.log('Oops, you fell down a hole');
+        playing = false;
+        break;
+      } else if (this.isHat()) {
+        console.log('You found you hat, congratulations!!');
+        playing = false;
+        break;
+      }
+      this.field[this.locationY][this.locationX] = pathCharacter;
+    }
+  }
 }
