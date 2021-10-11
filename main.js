@@ -47,4 +47,10 @@ class Field {
       this.locationX < this.field[0].length
     );
   }
+  isHat() {
+    return this.field[this.locationY][this.locationX] === hat;
+  }
+  isHole() {
+    return this.field[this.locationY][this.locationX] === hole;
+  }
 }
